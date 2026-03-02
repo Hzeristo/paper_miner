@@ -1,0 +1,21 @@
+# Secrets
+.env
+config.yaml
+
+# Data & Output
+papers/
+data/
+models/
+runs/
+logs/
+inbox/
+*.log
+*.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Misc
+.aider*

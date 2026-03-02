@@ -1,0 +1,15 @@
+🧬 <b>PROJECT CHIMERA | DAILY BRIEFING</b> 🧬
+━━━━━━━━━━━━━━━━━━━━
+🕸️ Fetched Today: <b>{{ new_pdfs_count }}</b>
+📊 Total: <b>{{ total }}</b> | 💎 Must Read: <b>{{ must_read }}</b> | 🗑️ Reject: {{ reject }}
+
+🎯 <b>ACQUIRED TARGETS</b>
+{% if must_read_items %}
+{% for item in must_read_items %}
+🔹 <b>[{{ item.score }}/10]</b> <code>{{ item.title }}</code>
+   <i>💡 {{ item.novelty }}</i>
+
+{% endfor %}
+{% else %}
+<i>☕ No targets today.</i>
+{% endif %}

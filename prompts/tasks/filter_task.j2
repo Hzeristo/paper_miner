@@ -1,0 +1,31 @@
+{# 注入用户研究立场，不在 user prompt 重定义系统角色 #}
+{% include "base/user_profile.j2" %}
+
+[TASK INSTRUCTIONS]
+Task: Calculate the Information Gain of the provided paper.
+
+**Evaluation Criteria**:
+1. **Novelty Delta**: What specifically does this add over strong memory/agent baselines?
+2. **Mechanism**: Extract the core trick.
+3. **Flaws**: Find the critical flaws.
+
+[OUTPUT FORMAT]
+You MUST output ONLY valid JSON. The JSON must strictly conform to the following JSON Schema:
+```json
+{{ json_schema }}
+```
+
+**Output Constraints**:
+- Do not add any text before or after the JSON.
+- Make sure Enum values exactly match the allowed values in the schema.
+- Arrays must be empty [] if no data found.
+
+[PAPER CONTENT START]
+Paper ID: {{ paper.id }}
+Paper Title: {{ paper.title }}
+
+{{ paper.raw_text }}
+[PAPER CONTENT END]
+
+[FINAL INSTRUCTION]
+Analyze the paper above. Generate the JSON review now:
